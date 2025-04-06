@@ -29,7 +29,8 @@ function Header() {
             whileInView={{ y: 0 ,opacity: 1 }}
             transition={{ duration: 0.6, delay:0.7 }}
             className='max-w-2xl mx-auto font-Ovo' >
-                I am a frontend developer from California, USA with 10 years of experience in multiple companies like Microsoft, Tesla and Apple.
+                I am a frontend developer from Pune, India with 4+ years of experience in <br/>
+                HTML, CSS, JavaScript, Angular, Raect & Node.
             </motion.p>
             <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
                 <motion.a 

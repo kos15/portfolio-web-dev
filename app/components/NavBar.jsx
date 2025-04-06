@@ -1,4 +1,5 @@
 import { assets } from '@/assets/assets'
+import { motion } from 'motion/react';
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 
@@ -7,7 +8,7 @@ function NavBar({isDarkMode, setIsDarkMode}) {
     const sideMenuRef = useRef();
 
     const openMenu = () =>{
-        sideMenuRef.current.style.transform = 'translateX(-16rem)';
+        sideMenuRef.current.style.transform = 'translateX(-0.2rem)';
     }
     const closeMenu = () =>{
         sideMenuRef.current.style.transform = 'translateX(16rem)';
@@ -17,6 +18,7 @@ function NavBar({isDarkMode, setIsDarkMode}) {
         window.addEventListener('scroll', () =>{
             setIsScroll(scrollY > 50);
         });
+        closeMenu();
     },[])
   return (
     <>
@@ -55,14 +57,37 @@ function NavBar({isDarkMode, setIsDarkMode}) {
             {/* mobile menu */}
 
             <ul ref={sideMenuRef} className='flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-0 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-[#2a004a] dark:text-white'>
-                <div className='absolute right-6 top-6'  onClick={closeMenu}>
+                <motion.div 
+                whileTap={{rotate: '90deg'}}
+                transition={{duration:0.95}}
+                className='absolute right-6 top-6'  onClick={closeMenu}>
                     <Image src={isDarkMode ? assets.close_white : assets.close_black} alt='' className='w-5 cursor-pointer'></Image>
-                </div>
-                <li className='font-Ovo'><a href='#home' onClick={closeMenu}>Home</a></li>
-                <li className='font-Ovo'><a href='#about' onClick={closeMenu}>About</a></li>
-                <li className='font-Ovo'><a href='#service' onClick={closeMenu}>Services</a></li>
-                <li className='font-Ovo'><a href='#work' onClick={closeMenu}>My Work</a></li>
-                <li className='font-Ovo'><a href='#contact' onClick={closeMenu}>Contact</a></li>
+                </motion.div>
+                <motion.li 
+                initial={{y: 100, opacity:0}}
+                whileInView={{y:0, opacity:1}}
+                transition={{duration: 0.3, delay:0.5}}
+                className='font-Ovo'><a href='#home' onClick={closeMenu}>Home</a></motion.li>
+                <motion.li 
+                initial={{y: 100, opacity:0}}
+                whileInView={{y:0, opacity:1}}
+                transition={{duration: 0.3, delay:0.4}}
+                className='font-Ovo'><a href='#about' onClick={closeMenu}>About</a></motion.li>
+                <motion.li 
+                initial={{y: 100, opacity:0}}
+                whileInView={{y:0, opacity:1}}
+                transition={{duration: 0.3, delay:0.3}}
+                className='font-Ovo'><a href='#service' onClick={closeMenu}>Services</a></motion.li>
+                <motion.li 
+                initial={{y: 100, opacity:0}}
+                whileInView={{y:0, opacity:1}}
+                transition={{duration: 0.3, delay:0.2}}
+                className='font-Ovo'><a href='#work' onClick={closeMenu}>My Work</a></motion.li>
+                <motion.li 
+                initial={{y: 100, opacity:0}}
+                whileInView={{y:0, opacity:1}}
+                transition={{duration: 0.3, delay:0.1}}
+                className='font-Ovo'><a href='#contact' onClick={closeMenu}>Contact</a></motion.li>
             </ul>
 
         </nav>

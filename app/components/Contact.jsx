@@ -87,7 +87,7 @@ function Contact({ isDarkMode }) {
         <motion.button
         initial={{ y:50, opacity: 0 }}
         whileInView={{ y:0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1.5 }}
+        transition={{ duration: 0.5, delay: 1.3 }}
         type=' submit'
           className='py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-[#2a004a]'>
           Submit now

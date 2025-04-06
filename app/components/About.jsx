@@ -39,7 +39,9 @@ function About({ isDarkMode }) {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className='flex-1'>
                     <p className='mb-10 max-w-2x] font-Ovo'
-                    >I am an experienced Frontend Developer with over a decade of professional expertise in the field. Throughout my career, I have had the privilege of collaborating with prestigious organizations, contributing to their success and growth. </p>
+                    >I'm a passionate Frontend Developer with 4+ years of experience building scalable, beautiful UIs using Angular, React, and Next.js, and have contributed to projects spanning Micro-Frontend architectures and AI-powered chatbots. <br />
+                    I also bring full-stack expertise with backend frameworks like Node.js and Spring Boot, and I'm keen on exploring Angular internals, Signals, and modern dev tooling.
+                    Beyond coding, I actively share insights on LinkedIn about Angular, GenAI tools, and modern dev workflows.</p>
                     <motion.ul
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
